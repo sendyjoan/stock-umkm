@@ -12,6 +12,9 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\DbManager'
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '8_8qlivli_l9OLDyfyNAKkYsjI819k4w',
@@ -51,11 +54,25 @@ $config = [
     ],
     'params' => $params,
     'modules' => [
-        'user' => [
-            'class' => 'dektrium\user\Module',
-            'enableUnconfirmedLogin' => true,
-            'admins' => ['admin']
+            'user' => [
+                'class' => 'dektrium\user\Module',
+                'enableUnconfirmedLogin' => true,
+                'admins' => ['admin']
+            ],
+            'admin' => [
+            'class' => 'mdm\admin\Module',
+            'layout' => 'left-menu',
+            'mainLayout' => '@app/views/layouts/main.php',
+            ],
         ],
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            'site/*',
+            '*',
+            'user/security/logout',
+            'user/security/login',
+        ]
     ],
 ];
 

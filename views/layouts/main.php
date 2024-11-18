@@ -50,6 +50,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 : [
                     'label' => 'Application',
                     'items' => [
+                        ['label' => 'Access Control', 'options' => ['class' => 'dropdown-header']],
+                        ['label' => 'Assignments', 'url' => ['/admin/assignment']],
+                        ['label' => 'Roles', 'url' => ['/admin/role']],
+                        ['label' => 'Permissions', 'url' => ['/admin/permission']],
+                        ['label' => 'Route', 'url' => ['/admin/route']],
+                        ['label' => 'Rules', 'url' => ['/admin/rule']],
                         ['label' => 'Master Data', 'options' => ['class' => 'dropdown-header']],
                         ['label' => 'Users', 'url' => ['/user/admin/index']],
                         ['label' => 'Satuan', 'url' => ['/satuans']],
