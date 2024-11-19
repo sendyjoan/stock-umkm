@@ -41,4 +41,9 @@ class TransactionCategory extends \yii\db\ActiveRecord
             'name' => 'Name',
         ];
     }
+
+    public function getTransaction()
+    {
+        return $this->hasMany(Transaction::class, ['transaction_category_id' => 'id']);
+    }
 }

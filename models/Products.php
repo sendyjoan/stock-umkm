@@ -63,4 +63,9 @@ class Products extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Satuans::class, ['id' => 'satuan_id']);
     }
+
+    public function getTransaction()
+    {
+        return $this->hasMany(Transaction::class, ['product_id' => 'id']);
+    }
 }
