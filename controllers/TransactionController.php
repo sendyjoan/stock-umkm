@@ -76,7 +76,6 @@ class TransactionController extends Controller
             if ($model->load($this->request->post())) {
                 $model->created_by = Yii::$app->user->id;
                 $model->total = $model->quantity * $model->price;
-                // dd($model);
                 $transactionName = TransactionCategory::find()->where(['id' => $model->transaction_category_id])->one();
                 if ($transactionName->name == 'Transaksi Masuk') {
                     $product = Products::find()->where(['id' => $model->product_id])->one();
@@ -99,9 +98,6 @@ class TransactionController extends Controller
                     return $this->redirect(['view', 'id' => $model->id]);
                 }
             }
-            // if ($model->load($this->request->post()) && $model->save()) {
-            //     return $this->redirect(['view', 'id' => $model->id]);
-            // }
         } else {
             $model->loadDefaultValues();
         }
