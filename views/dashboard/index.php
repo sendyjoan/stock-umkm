@@ -9,8 +9,6 @@ use yii\grid\ActionColumn;
 use yii\helpers\ArrayHelper;
 
 /** @var yii\web\View $this */
-/** @var app\models\ProductsSearch $searchModel */
-/** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Dashboard';
 ?>
