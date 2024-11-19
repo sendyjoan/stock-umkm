@@ -1,10 +1,12 @@
 <?php
 
-use app\models\Products;
-use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\grid\ActionColumn;
+use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\Satuans;
+use app\models\Products;
+use yii\grid\ActionColumn;
+use yii\helpers\ArrayHelper;
 
 /** @var yii\web\View $this */
 /** @var app\models\ProductsSearch $searchModel */
@@ -29,11 +31,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            // 'id',
             'name',
-            'description:ntext',
+            // 'description:ntext',
             'stock',
-            'satuan_id',
+            [
+                'attribute' => 'satuan_id',
+                'value' => 'satuan.name',
+                'filter' => ArrayHelper::map(Satuans::find()->all(), 'id', 'name'),
+            ],
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Products $model, $key, $index, $column) {

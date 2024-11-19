@@ -50,7 +50,7 @@ class Products extends \yii\db\ActiveRecord
             'name' => 'Name',
             'description' => 'Description',
             'stock' => 'Stock',
-            'satuan_id' => 'Satuan ID',
+            'satuan_id' => 'Satuan',
         ];
     }
 
