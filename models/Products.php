@@ -37,6 +37,7 @@ class Products extends \yii\db\ActiveRecord
             [['satuan_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
             [['satuan_id'], 'exist', 'skipOnError' => true, 'targetClass' => Satuans::class, 'targetAttribute' => ['satuan_id' => 'id']],
+            [['satuan'], 'safe'],
         ];
     }
 

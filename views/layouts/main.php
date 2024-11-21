@@ -60,6 +60,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                         ['label' => 'Users', 'url' => ['/user/admin/index']],
                         ['label' => 'Satuan', 'url' => ['/satuans']],
                         ['label' => 'Products', 'url' => ['/products']],
+                        ['label' => 'Main Menu', 'options' => ['class' => 'dropdown-header']],
+                        ['label' => 'Transactions', 'url' => ['/transaction']],
                         // ['label' => 'Dropdown Item 2', 'url' => '#'],
                     ],
                 ],
